@@ -5,7 +5,7 @@ Seq2Seq model for machine translation using TensorFlow
 
 ## Data
 - Retrieved from <a href="https://github.com/deep-diver/EN-FR-MLT-tensorflow/tree/master/data"> deep-diver</a>
-- 137,861 sentences
+- 137,861 pair of sentences
 - English vocab size: 199
 - French vocab size:  339
 
@@ -14,9 +14,9 @@ Seq2Seq model for machine translation using TensorFlow
 
 ## Usage
 - Training:
-  - `train(source_file, target_file, is_tar=False)`
+  - `train(source_file, target_file, is_tar=False)`__
   or if you wish to extract from within the script:
-  - `tar = tarfile.open("Data/en-fr_small.tar.gz", "r:gz")
+  - `tar = tarfile.open("Data/en-fr_small.tar.gz", "r:gz")`
   - `train(source_file_name, target_file_name, is_tar=True, tar=tar)`
 - Translating
   - `input_sentence = "I love french. it is a nice language."`
