@@ -564,7 +564,7 @@ def translate(text, params_path='params.p', language="english"):
     translated_ids = translate_logits[:num_sentences]
     return ". ".join([" ".join([tar_id2w[w] for w in sen]) for sen in translated_ids])
 
-# root = "../../NLP_data/parallel/en-fr_small/"
+# root = "Data/en-fr_small/"
 # train(root+"en", root+"fr", is_tar=False)
 
 # input_sentence = "I love french. it is a nice language."
