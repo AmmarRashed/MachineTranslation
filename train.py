@@ -1,6 +1,7 @@
 from __future__ import print_function, division, absolute_import
 
 from util_functions import *
+import tarfile
 import os
 import codecs
 import pickle
@@ -26,8 +27,9 @@ def process_data(path:str, tokenizer, special_tokens={"<PAD>": 0, "<EOS>": 1, "<
                  is_tar=False, tar=None
                  ):
     # Read the text
+    tar_object = tarfile.open(tar, "r:gz")
     if is_tar:
-        text_raw = load_dataset(path, tar)
+        text_raw = load_dataset(path, tar_object)
     else:
         with codecs.open(path, opsrc_mode, "utf-8") as file:
             text_raw = file.read().lower()
@@ -341,7 +343,7 @@ def train(source_file, target_file,
           reverse_source=True,
           max_display_step=300,
           save_path = os.path.join("checkpoints","dev"),
-          is_tar=False, tar=None,
+          is_tar=False, tar=None
           ):
 
     if not "checkpoints" in os.listdir():
