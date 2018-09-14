@@ -14,7 +14,7 @@ Seq2Seq model for machine translation using TensorFlow
 
 ## Usage
 - Training:
-  - `train(source_file, target_file, is_tar=False)`__
+  - `train(source_file, target_file, is_tar=False)`  
   or if you wish to extract from within the script:
   - `tar = tarfile.open("Data/en-fr_small.tar.gz", "r:gz")`
   - `train(source_file_name, target_file_name, is_tar=True, tar=tar)`
